@@ -187,14 +187,25 @@
         }
 
         /* --- Global Section Settings --- */
-        section { padding: 100px 10% 60px; max-width: 1400px; margin: auto; }
+        section {
+            padding: 32px 12px 18px 12px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            width: 100%;
+        }
         h2 { font-size: 2.3rem; color: var(--primary-dark); margin-bottom: 40px; position: relative; text-align: center; }
         h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); }
         .section-center { text-align: center; }
 
         @media (max-width: 700px) {
             section {
-                padding: 60px 5% 40px;
+                padding: 6px 2px 6px 2px;
+                width: 100vw;
+                box-sizing: border-box;
+                margin-left: 0;
+                margin-right: 0;
             }
             h2 {
                 font-size: 1.5rem;
@@ -298,16 +309,29 @@
 
         /* --- Contact Section --- */
         .contact-wrapper {
-            display: grid; grid-template-columns: 1fr 2fr;
-            gap: 40px; margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            box-sizing: border-box;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: 100%;
         }
         @media (max-width: 900px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            section { padding: 80px 20px; }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            section { padding: 0px 10px; }
         }
         @media (max-width: 700px) {
             .contact-wrapper {
                 gap: 20px;
+                padding-left: 4px;
+                padding-right: 4px;
+                grid-template-columns: 1fr;
             }
             .contact-form {
                 padding: 20px;
@@ -316,8 +340,8 @@
         
         .contact-info { display: flex; flex-direction: column; gap: 20px; }
         .info-card {
-            background: white; padding: 20px; border-radius: 15px;
-            display: flex; align-items: center; gap: 15px;
+            background: white; padding: 2px; border-radius: 15px;
+            display: flex; align-items: center; gap: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: 0.3s;
         }
@@ -372,6 +396,7 @@
 <body>
 
     <nav>
+        <img src="logo.jpeg" alt="Morebo Fresh Farm Logo" class="nav-logo" style="height:44px;width:auto;margin-right:18px;border-radius:8px;object-fit:contain;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks" onclick="toggleNav()">
             <span class="bar bar1"></span>
             <span class="bar bar2"></span>
@@ -384,6 +409,7 @@
             <a href="#gallery" onclick="closeNav()">Gallery</a>
             <a href="#contact" onclick="closeNav()">Contact</a>
         </div>
+           
     </nav>
 
     <header>
@@ -405,17 +431,17 @@
         <h2>Premium Harvests</h2>
         <div class="grid-layout">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1597362860722-39e62fc44c82?auto=format&fit=crop&q=80&w=800" alt="Veg">
+                <img src="images/cbg.jpeg" alt="Veg">
                 <div class="card-content">
                     <h3>Vibrant Greens</h3>
-                    <p>Spinach, Cabbage, and traditional greens picked at the peak of freshness.</p>
+                    <p>Cabbage, and traditional greens picked at the peak of freshness.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1619566636858-adb3ef26403b?auto=format&fit=crop&q=80&w=800" alt="Fruits">
+                <img src="images/pig farm.jpeg" alt="Animal Farming">
                 <div class="card-content">
-                    <h3>Seasonal Fruits</h3>
-                    <p>Sun-ripened local fruits bursting with natural sweetness.</p>
+                    <h3>Animal Farming </h3>
+                    <p>Best quality animal farming products specialising in pork.</p>fed with the best quality feed and care.</p>
                 </div>
             </div>
             <div class="card">
@@ -437,9 +463,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td data-label="Item">Fresh Spinach</td>
-                        <td data-label="Unit">Per Bundle</td>
-                        <td data-label="Price (M)">M 15.00</td>
+                        <td data-label="Item">Eggs</td>
+                        <td data-label="Unit">Per tray</td>
+                        <td data-label="Price (M)">M 60.00</td>
                         <td data-label="Status"><span class="status">In Stock</span></td>
                     </tr>
                     <tr>
@@ -460,12 +486,15 @@
     </section>
 
     <section id="gallery">
+        <div class="gallery-grid" style="margin-bottom:0;">
+            <video src="mini vid.mp4" autoplay loop muted playsinline class="gallery-item" style="object-fit:cover;height:460px;" aria-label="Farm video"></video>
+               </div>
         <h2>Farm Gallery</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=800" class="gallery-item" onclick="openLightbox(this.src)">
-            <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80&w=800" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="images/cbg.jpeg" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="images/egg deliver.jpeg" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="images/egs.jpeg" class="gallery-item" onclick="openLightbox(this.src)">
+            <img src="images/pig farm.jpeg" class="gallery-item" onclick="openLightbox(this.src)">
         </div>
     </section>
 
@@ -479,11 +508,11 @@
                 </div>
                 <div class="info-card">
                     <i class="material-icons">phone</i>
-                    <div><h4>Phone</h4><p>+266 YOUR-NUMBER</p></div>
+                    <div><h4>Phone</h4><p>+266 53031883</p></div>
                 </div>
                 <div class="info-card">
                     <i class="material-icons">email</i>
-                    <div><h4>Email</h4><p>info@morebofresh.ls</p></div>
+                    <div><h4>Email</h4><p>morebofreshfarmproduce@gmail.com</p></div>
                 </div>
             </div>
 
@@ -494,7 +523,7 @@
                 </div>
                 <select>
                     <option>General Inquiry</option>
-                    <option>Bulk/Wholesale Order</option>
+                    <option>Bulk/Wholesale Order</option>deliver egspigc
                     <option>Home Delivery Request</option>
                 </select>
                 <textarea rows="5" placeholder="Your Message..."></textarea>
@@ -507,7 +536,7 @@
         <p>© 2026 Morebo Fresh Farm Produce. Cultivating a Healthier Tomorrow.</p>
     </footer>
 
-    <a class="whatsapp-btn" href="https://wa.me/266YOURNUMBER" target="_blank">
+    <a class="whatsapp-btn" href="https://wa.me/26653031883" target="_blank">
         <i class="material-icons">chat</i><span>WhatsApp Us</span>
     </a>
 
