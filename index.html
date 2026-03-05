@@ -118,7 +118,8 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 100vw;
+                max-width: 100%;
+                width: 100%;
                 background: var(--glass);
                 flex-direction: column;
                 align-items: flex-start;
@@ -202,7 +203,8 @@
         @media (max-width: 700px) {
             section {
                 padding: 6px 2px 6px 2px;
-                width: 100vw;
+                max-width: 100%;
+                width: 100%;
                 box-sizing: border-box;
                 margin-left: 0;
                 margin-right: 0;
@@ -345,10 +347,17 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: 0.3s;
         }
-        .info-card:hover { transform: translateX(10px); background: #f1f8f1; }
+        .info-card:hover { transform: translateY(-2px); background: #f1f8f1; }
         .info-card i { background: var(--primary); color: white; padding: 12px; border-radius: 12px; }
         
         .contact-form { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 700px), (hover: none) {
+            .info-card:hover { transform: none; }
+        }
         input, textarea, select { 
             width: 100%; padding: 15px; margin: 10px 0; 
             border-radius: 10px; border: 1px solid #eee; background: #fdfdfd; font-family: inherit; 
@@ -441,7 +450,7 @@
                 <img src="images/pig farm.jpeg" alt="Animal Farming">
                 <div class="card-content">
                     <h3>Animal Farming </h3>
-                    <p>Best quality animal farming products specialising in pork.</p>fed with the best quality feed and care.</p>
+                    <p>Best quality animal farming products specialising in pork, fed with the best quality feed and care.</p>
                 </div>
             </div>
             <div class="card">
@@ -512,18 +521,18 @@
                 </div>
                 <div class="info-card">
                     <i class="material-icons">email</i>
-                    <div><h4>Email</h4><p>morebofreshfarmproduce@gmail.com</p></div>
+                    <div><h4>Email</h4><p><a href="mailto:morebofreshfarmproduce@gmail.com" style="color:inherit;text-decoration:underline;">morebofreshfarmproduce@gmail.com</a></p></div>
                 </div>
             </div>
 
             <form class="contact-form" action="mailto:info@morebofresh.ls" method="post" enctype="text/plain">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="two-col">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                 </div>
                 <select>
                     <option>General Inquiry</option>
-                    <option>Bulk/Wholesale Order</option>deliver egspigc
+                    <option>Bulk/Wholesale Order</option>
                     <option>Home Delivery Request</option>
                 </select>
                 <textarea rows="5" placeholder="Your Message..."></textarea>
