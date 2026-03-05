@@ -316,8 +316,7 @@
             gap: 40px;
             margin-top: 40px;
             box-sizing: border-box;
-            padding-left: 16px;
-            padding-right: 16px;
+            margin-right: 20px;
             width: 100%;
         }
         @media (max-width: 900px) {
@@ -336,21 +335,25 @@
                 grid-template-columns: 1fr;
             }
             .contact-form {
-                padding: 20px;
+                padding: 2px;
+                
             }
         }
         
-        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+        .contact-info { display: flex; flex-direction: column; gap: 10px; }
         .info-card {
-            background: white; padding: 2px; border-radius: 15px;
-            display: flex; align-items: center; gap: 12px;
+            background: white; padding: 6px; border-radius: 15px;
+            display: flex; align-items: center; gap: 5px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: 0.3s;
+            margin-left:0px;
+            width: 100%;
+            justify-content: left;
         }
         .info-card:hover { transform: translateY(-2px); background: #f1f8f1; }
-        .info-card i { background: var(--primary); color: white; padding: 12px; border-radius: 12px; }
+        .info-card i { background: var(--primary); color: white; padding: 5px; border-radius: 12px; }
         
-        .contact-form { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .contact-form { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05);width: 100%; }
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         @media (max-width: 600px) {
             .two-col { grid-template-columns: 1fr; }
@@ -520,8 +523,9 @@
                     <div><h4>Phone</h4><p><a href="tel:+26653031883" style="color:inherit;text-decoration:underline;">+266 53031883</a></p></div>
                 </div>
                 <div class="info-card">
-                    <i class="material-icons">email</i>
-                    <div><h4>Email</h4><p><a href="mailto:morebofreshfarmproduce@gmail.com" style="color:inherit;text-decoration:underline;">morebofreshfarmproduce@gmail.com</a></p></div>
+            <i class="material-icons">email</i>
+                    <div><h4>Email</h4><p><a href="mailto:morebofreshfarmproduce@gmail.com"
+                             style="color:inherit;text-decoration:underline;word-break:break-word;"> morebofreshfarmproduce@gmail.com</a></p></div>
                 </div>
             </div>
 
