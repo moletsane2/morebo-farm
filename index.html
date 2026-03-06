@@ -340,21 +340,40 @@
             }
         }
         
-        .contact-info { display: flex; flex-direction: column; gap: 10px; }
+        .contact-info { display: flex; flex-direction: column; gap: 10px;}
         .info-card {
-            background: white; padding: 6px; border-radius: 15px;
+            background: white; padding:6px; border-radius: 10px;
             display: flex; align-items: center; gap: 5px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: 0.3s;
             margin-left:0px;
-            width: 100%;
-            justify-content: left;
+            width:auto;
+            justify-content:flex-start;
+            
         }
-        .info-card:hover { transform: translateY(-2px); background: #f1f8f1; }
-        .info-card i { background: var(--primary); color: white; padding: 5px; border-radius: 12px; }
+        .info-card:hover { 
+            transform: translateY(-2px); 
+            background: #f1f8f1; 
+        }
+        .info-card i { 
+            background: var(--primary);
+            color: white; 
+            padding: 5px;
+            border-radius: 12px;
+        }
         
-        .contact-form { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05);width: 100%; }
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .contact-form { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            width: 100%;
+            align-items: center;
+         }
+        .two-col { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; }
         @media (max-width: 600px) {
             .two-col { grid-template-columns: 1fr; }
         }
@@ -434,7 +453,7 @@
     <section id="about" class="section-center">
         <h2>Our Story</h2>
         <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: #636e72;">
-            Located in Maseru, <strong>Morebo Fresh Farm Produce</strong> is committed to bringing the harvest of the mountain kingdom 
+            Located in Teyateyaneng, <strong>Morebo Fresh Farm Produce</strong> is committed to bringing the harvest of the mountain kingdom 
             straight to your table. We focus on organic practices to ensure every bite is packed with nutrition.
         </p>
     </section>
@@ -516,7 +535,7 @@
             <div class="contact-info">
                 <div class="info-card">
                     <i class="material-icons">place</i>
-                    <div><h4>Location</h4><p>Maseru, Lesotho</p></div>
+                    <div><h4>Location</h4><p>Teyateyaneg, Lesotho</p></div>
                 </div>
                 <div class="info-card">
                     <i class="material-icons">phone</i>
@@ -528,20 +547,7 @@
                              style="color:inherit;text-decoration:underline;word-break:break-word;"> morebofreshfarmproduce@gmail.com</a></p></div>
                 </div>
             </div>
-
-            <form class="contact-form" action="https://formsubmit.co/morebofreshfarmproduce@gmail.com" method="POST" enctype="text/plain">
-                <div class="two-col">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <select>
-                    <option>General Inquiry</option>
-                    <option>Bulk/Wholesale Order</option>
-                    <option>Home Delivery Request</option>
-                </select>
-                <textarea rows="5" placeholder="Your Message..."></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            
         </div>
     </section>
 
